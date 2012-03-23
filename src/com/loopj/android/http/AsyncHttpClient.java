@@ -459,7 +459,6 @@ public class AsyncHttpClient {
      * @param responseHandler the response handler instance that should handle the response.
      */
     public void delete(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
-	System.out.println(getUrlWithQueryString(url, params));
         delete(null, getUrlWithQueryString(url, params), responseHandler);
     }
 
