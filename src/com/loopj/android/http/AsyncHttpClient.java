@@ -454,6 +454,17 @@ public class AsyncHttpClient {
 
     /**
      * Perform a HTTP DELETE request.
+     * @param url the URL to send the request to.
+     * @param params additional DELETE parmeters to send with the request (not very REST-ful).
+     * @param responseHandler the response handler instance that should handle the response.
+     */
+    public void delete(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+	System.out.println(getUrlWithQueryString(url, params));
+        delete(null, getUrlWithQueryString(url, params), responseHandler);
+    }
+
+    /**
+     * Perform a HTTP DELETE request.
      * @param context the Android Context which initiated the request.
      * @param url the URL to send the request to.
      * @param responseHandler the response handler instance that should handle the response.
